@@ -17,6 +17,7 @@ describe('Consultar cliente testes integração', () => {
     );
     const cliente = await consultarClienteUseCase.execute(clienteMock);
     expect(cliente).toEqual({
+      cliente_id: 99,
       email: undefined,
       endereco: undefined,
       nome: 'teste',

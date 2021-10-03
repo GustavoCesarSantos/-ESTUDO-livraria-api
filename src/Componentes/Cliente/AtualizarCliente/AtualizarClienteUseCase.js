@@ -1,9 +1,9 @@
-export default class CadastrarClienteUseCase {
-  constructor(cadastrarClienteRepository) {
-    this.cadastrarClienteRepository = cadastrarClienteRepository;
+export default class AtualizarClienteUseCase {
+  constructor(clienteRepository) {
+    this.clienteRepository = clienteRepository;
   }
 
   execute(clienteRequestDTO) {
-    this.cadastrarClienteRepository.update(clienteRequestDTO);
+    this.clienteRepository.update(clienteRequestDTO);
   }
 }

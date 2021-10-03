@@ -1,6 +1,6 @@
 import AtualizarClienteRequestDTO from './AtualizarClienteRequestDTO.js';
 import AtualizarClienteUseCase from './AtualizarClienteUseCase.js';
-import AtualizarClienteRepositoryPostgres from './AtualizarClienteRepositoryPostgres.js';
+import ClienteRepositoryPostgres from '../Repository/ClienteRepositoryPostgres.js';
 import PgPromiseDatabase from '../../../infra/database/PgPromiseDatabase.js';
 
 export default class AtualizarClienteController {
@@ -10,7 +10,7 @@ export default class AtualizarClienteController {
     const atualizarClienteRequestDTO = new AtualizarClienteRequestDTO({
       ...request.body,
     });
-    const atualizarClienteRepository = new AtualizarClienteRepositoryPostgres(
+    const atualizarClienteRepository = new ClienteRepositoryPostgres(
       PgPromiseDatabase.getInstance()
     );
     const atualizarClienteUseCase = new AtualizarClienteUseCase(
