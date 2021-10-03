@@ -2,6 +2,9 @@ export default class AutorRepositoryMemory {
   constructor() {
     this.autores = [
       {
+        autor_id: 1,
+      },
+      {
         autor_id: 99,
         nome: 'teste',
       },
