@@ -1,6 +1,6 @@
 import AtualizarInfoRequestDTO from './AtualizarInfoRequestDTO.js';
 import AtualizarInfoUseCase from './AtualizarInfoUseCase.js';
-import InfoRepositoryPostgres from '../Repository/InfoRepositoryPostgres.js';
+import InfoRepositoryMongoDb from '../Repository/InfoRepositoryMongoDb.js';
 import MongoDbDatabase from '../../../../infra/database/MongoDbDatabase.js';
 
 export default class AtualizarInfoController {
@@ -10,7 +10,7 @@ export default class AtualizarInfoController {
     const atualizarInfoRequestDTO = new AtualizarInfoRequestDTO({
       ...request.body,
     });
-    const atualizarInfoRepository = new InfoRepositoryPostgres(
+    const atualizarInfoRepository = new InfoRepositoryMongoDb(
       MongoDbDatabase.getInstance()
     );
     const atualizarInfoUseCase = new AtualizarInfoUseCase(
