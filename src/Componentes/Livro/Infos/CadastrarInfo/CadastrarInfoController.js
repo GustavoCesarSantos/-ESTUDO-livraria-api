@@ -1,6 +1,6 @@
 import CadastrarInfoRequestDTO from './CadastrarInfoRequestDTO.js';
 import CadastrarInfoUseCase from './CadastrarInfoUseCase.js';
-import InfoRepositoryPostgres from '../Repository/InfoRepositoryPostgres.js';
+import InfoRepositoryMongoDb from '../Repository/InfoRepositoryMongoDb.js';
 import MongoDbDatabase from '../../../../infra/database/MongoDbDatabase.js';
 
 export default class CadastrarInfoController {
@@ -10,7 +10,7 @@ export default class CadastrarInfoController {
     const cadastrarInfoRequestDTO = new CadastrarInfoRequestDTO({
       ...request.body,
     });
-    const infoRepository = new InfoRepositoryPostgres(
+    const infoRepository = new InfoRepositoryMongoDb(
       MongoDbDatabase.getInstance()
     );
     const cadastrarInfoUseCase = new CadastrarInfoUseCase(infoRepository);

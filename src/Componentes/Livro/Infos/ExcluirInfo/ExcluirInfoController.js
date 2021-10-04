@@ -1,6 +1,6 @@
 import ExcluirInfoRequestDTO from './ExcluirInfoRequestDTO.js';
 import ExcluirInfoUseCase from './ExcluirInfoUseCase.js';
-import InfoRepositoryPostgres from '../Repository/InfoRepositoryPostgres.js';
+import InfoRepositoryMongoDb from '../Repository/InfoRepositoryMongoDb.js';
 import PgPromiseDatabase from '../../../infra/database/PgPromiseDatabase.js';
 
 export default class ExcluirInfoController {
@@ -10,7 +10,7 @@ export default class ExcluirInfoController {
     const excluirInfoRequestDTO = new ExcluirInfoRequestDTO({
       ...request.params,
     });
-    const infoRepository = new InfoRepositoryPostgres(
+    const infoRepository = new InfoRepositoryMongoDb(
       PgPromiseDatabase.getInstance()
     );
     const excluirInfoUseCase = new ExcluirInfoUseCase(infoRepository);
