@@ -28,4 +28,8 @@ export default class MongoDbDatabase {
   async delete(db, collection, query) {
     await this.mongodb.db(db).collection(collection).deleteOne(query);
   }
+
+  async one(db, collection, query) {
+    await this.mongodb.db(db).collection(collection).findOne(query);
+  }
 }

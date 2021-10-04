@@ -1,4 +1,4 @@
-export default class InfoRepositoryPostgres {
+export default class InfoRepositoryMongoDb {
   constructor(database) {
     this.database = database;
   }
@@ -15,5 +15,10 @@ export default class InfoRepositoryPostgres {
   async delete(info) {
     const query = { livroId: info.livroId };
     await this.database.delete('livraria', 'livroinfo', query);
+  }
+
+  async one(info) {
+    const query = { livroId: info.livroId };
+    await this.database.one('livraria', 'livroinfo', query);
   }
 }

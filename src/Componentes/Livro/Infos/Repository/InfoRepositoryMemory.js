@@ -34,4 +34,8 @@ export default class InfoRepositoryMemory {
     const index = this.infos.findIndex((item) => item.livroId === info.livroId);
     this.infos.splice(index, 1);
   }
+
+  one(info) {
+    return this.infos.find((item) => item.livroId === info.livroId);
+  }
 }
