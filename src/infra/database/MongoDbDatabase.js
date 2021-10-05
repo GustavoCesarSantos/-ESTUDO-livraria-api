@@ -3,9 +3,7 @@ import mongodb from 'mongodb';
 export default class MongoDbDatabase {
   constructor() {
     this.instance;
-    this.mongodb = new mongodb.MongoClient(
-      `mongodb+srv://livrariaapi:livrariaapi@cluster0.ecscd.mongodb.net/livraria?retryWrites=true&w=majority`
-    );
+    this.mongodb = new mongodb.MongoClient(process.env.MONGO_URL);
   }
 
   static getInstance() {

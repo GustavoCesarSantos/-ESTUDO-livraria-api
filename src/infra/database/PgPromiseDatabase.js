@@ -7,9 +7,9 @@ export default class PgPromiseDatabase {
     this.pgp = pgp()({
       host: 'localhost',
       port: 5432,
-      database: 'livraria',
+      database: process.env.POSTGRES_DATABASE,
       user: 'postgres',
-      password: 'livrariaapi',
+      password: process.env.POSTGRES_PASSWORD,
       max: 20,
       idleTimeoutMillis: 1000,
     });
