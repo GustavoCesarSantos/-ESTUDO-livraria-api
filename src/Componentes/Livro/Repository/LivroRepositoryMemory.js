@@ -3,6 +3,9 @@ export default class LivroRepositoryMemory {
     this.livros = [
       {
         livro_id: 1,
+        nome: 'teste',
+        valor: 10,
+        estoque: 10,
         autor_id: 99,
       },
       {
