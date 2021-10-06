@@ -1,6 +1,6 @@
 import ConsultarLivrosPorAutorRequestDTO from './ConsultarLivrosPorAutorRequestDTO.js';
 import ConsultarLivrosPorAutorUseCase from './ConsultarLivrosPorAutorUseCase.js';
-import LivroRepositoryPostgres from '../Repository/LivroPorAutorRepositoryPostgres.js';
+import LivroRepositoryPostgres from '../Repository/LivroRepositoryPostgres.js';
 import PgPromiseDatabase from '../../../infra/database/PgPromiseDatabase.js';
 
 export default class ConsultarLivrosPorAutorController {
