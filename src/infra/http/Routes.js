@@ -23,6 +23,10 @@ import ExcluirInfoController from '../../Componentes/Livro/Info/ExcluirInfo/Excl
 import CadastrarAvaliacaoController from '../../Componentes/Livro/Info/Avaliacao/CadastrarAvaliacao/CadastrarAvaliacaoController.js';
 import ExcluirAvaliacaoController from '../../Componentes/Livro/Info/Avaliacao/ExcluirAvaliacao/ExcluirAvaliacaoController.js';
 
+import CadastrarVendaController from '../../Componentes/Venda/CadastrarVenda/CadastrarVendaController.js';
+import ConsultarVendaController from '../../Componentes/Venda/ConsultarVenda/ConsultarVendaController.js';
+import ConsultarVendasController from '../../Componentes/Venda/ConsultarVendas/ConsultarVendasController.js';
+
 const cadastrarClienteController = new CadastrarClienteController();
 const atualizarClienteController = new AtualizarClienteController();
 const excluirClienteController = new ExcluirClienteController();
@@ -47,6 +51,10 @@ const excluirInfoController = new ExcluirInfoController();
 
 const cadastrarAvaliacaoController = new CadastrarAvaliacaoController();
 const excluirAvaliacaoController = new ExcluirAvaliacaoController();
+
+const cadastrarVendaController = new CadastrarVendaController();
+const consultarVendaController = new ConsultarVendaController();
+const consultarVendasController = new ConsultarVendasController();
 
 export default class Routes {
   constructor(http) {
@@ -84,5 +92,9 @@ export default class Routes {
       '/livro/:livroId/avaliacao/:index',
       excluirAvaliacaoController.handler
     );
+
+    this.http.post('/venda', cadastrarVendaController.handler);
+    this.http.get('/venda/:vendaId', consultarVendaController.handler);
+    this.http.get('/venda', consultarVendasController.handler);
   }
 }
