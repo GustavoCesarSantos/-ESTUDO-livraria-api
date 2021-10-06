@@ -7,11 +7,11 @@ export default class AutorRepositoryPostgres {
     const query = `insert into autores ( 
       nome, 
       email, 
-      telefone, 
+      telefone
     ) values ( 
       $1, 
       $2, 
-      $3, 
+      $3
     )`;
     const parameters = [autor.nome, autor.email, autor.telefone];
     await this.database.none(query, parameters);
@@ -21,8 +21,8 @@ export default class AutorRepositoryPostgres {
     const query = `update autores set 
       nome = $1, 
       email = $2, 
-      telefone = $3, 
-    where autor_id = $4 `;
+      telefone = $3
+    where autor_id = $4`;
     const parameters = [
       autor.nome,
       autor.email,
