@@ -1,5 +1,5 @@
 export default class ConsultarVendasPorLivroRequestDTO {
   constructor(venda) {
-    this.livro_id = venda.livroId;
+    this.livro_id = venda.livroId * 1;
   }
 }

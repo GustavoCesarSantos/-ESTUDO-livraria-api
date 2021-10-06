@@ -1,6 +1,6 @@
 import CadastrarVendaRequestDTO from './CadastrarVendaRequestDTO.js';
 import CadastrarVendaUseCase from './CadastrarVendaUseCase.js';
-import LivroRepositoryPostgres from '../../Livro/Repository/LivroRepositoryPostgres';
+import LivroRepositoryPostgres from '../../Livro/Repository/LivroRepositoryPostgres.js';
 import VendaRepositoryPostgres from '../Repository/VendaRepositoryPostgres.js';
 import PgPromiseDatabase from '../../../infra/database/PgPromiseDatabase.js';
 

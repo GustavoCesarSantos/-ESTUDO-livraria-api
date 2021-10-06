@@ -4,12 +4,12 @@ export default class CadastrarVendaUseCase {
     this.vendaRepository = vendaRepository;
   }
 
-  execute(vendaRequestDTO) {
-    const livro = this.livroRepository.one(vendaRequestDTO);
+  async execute(vendaRequestDTO) {
+    const livro = await this.livroRepository.one(vendaRequestDTO);
     if (livro.estoque === 0) throw new Error('Livro fora de estoque.');
     vendaRequestDTO.valor = livro.valor;
-    this.vendaRepository.save(vendaRequestDTO);
+    await this.vendaRepository.save(vendaRequestDTO);
     livro.estoque--;
-    return this.livroRepository.update(livro);
+    return await this.livroRepository.update(livro);
   }
 }

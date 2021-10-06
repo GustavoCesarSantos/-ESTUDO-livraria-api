@@ -13,7 +13,7 @@ export default class VendaRepositoryPostgres {
       $1, 
       $2, 
       $3, 
-      $4, 
+      $4 
     )`;
     const parameters = [
       venda.valor,

@@ -9,7 +9,7 @@ export default class ConsultarVendasPorLivroController {
   async handler(request, response) {
     const consultarVendasPorLivroRequestDTO =
       new ConsultarVendasPorLivroRequestDTO({
-        ...request.params,
+        ...request.query,
       });
     const vendaRepository = new VendaRepositoryPostgres(
       PgPromiseDatabase.getInstance()
